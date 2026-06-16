@@ -1,157 +1,336 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sift Account and Data Deletion</title>
-  <meta name="description" content="Request deletion of your Sift account and associated personal data." />
+  <meta name="description" content="How to request deletion of your Sift account and associated personal data." />
+
   <style>
     :root {
-      color-scheme: light dark;
-      --bg: #f8fafc;
+      --bg: #f7f9fc;
       --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --border: #e2e8f0;
-      --accent: #0f172a;
+      --text: #111827;
+      --muted: #4b5563;
+      --soft: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --accent-soft: #eff6ff;
+      --success-soft: #ecfdf5;
+      --success-border: #a7f3d0;
+      --success-text: #065f46;
+      --shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
+      --radius: 20px;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f172a;
-        --card: #111827;
-        --text: #f8fafc;
-        --muted: #cbd5e1;
-        --border: #334155;
-        --accent: #f8fafc;
-      }
+
+    * {
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      padding: 40px 16px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%),
+        var(--bg);
       color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.65;
     }
-    main {
-      max-width: 820px;
+
+    .page {
+      width: 100%;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 48px 20px;
     }
-    article {
+
+    .card {
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
-    h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.1;
-      margin: 0 0 12px;
-      letter-spacing: -0.04em;
+
+    header {
+      padding: 40px 36px 28px;
+      border-bottom: 1px solid var(--border);
     }
-    h2 {
-      font-size: 1.25rem;
-      margin-top: 32px;
-      margin-bottom: 8px;
-    }
-    p, li { color: var(--muted); }
-    strong { color: var(--text); }
-    a {
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
       color: var(--accent);
       font-weight: 700;
+      letter-spacing: -0.02em;
     }
-    .date {
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #60a5fa);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+    }
+
+    .subtitle {
+      max-width: 680px;
+      margin: 16px 0 0;
       color: var(--muted);
-      margin-bottom: 28px;
+      font-size: 1.05rem;
     }
-    .box {
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 18px;
-      background: color-mix(in srgb, var(--card), var(--bg) 35%);
-    }
-    footer {
-      margin-top: 28px;
-      color: var(--muted);
+
+    .meta {
+      margin-top: 20px;
+      color: var(--soft);
       font-size: 0.95rem;
     }
+
+    main {
+      padding: 8px 36px 36px;
+    }
+
+    section {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .action {
+      margin-top: 22px;
+      padding: 18px;
+      border: 1px solid #bfdbfe;
+      background: var(--accent-soft);
+      border-radius: 14px;
+    }
+
+    .action p {
+      color: #1e3a8a;
+    }
+
+    .email-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 14px;
+      padding: 12px 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .email-button:hover {
+      text-decoration: none;
+      background: #1d4ed8;
+    }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border: 1px solid var(--success-border);
+      background: var(--success-soft);
+      color: var(--success-text);
+      border-radius: 14px;
+    }
+
+    .note p {
+      color: var(--success-text);
+    }
+
+    footer {
+      padding: 26px 36px 34px;
+      border-top: 1px solid var(--border);
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 20px 12px;
+      }
+
+      header,
+      main,
+      footer {
+        padding-left: 22px;
+        padding-right: 22px;
+      }
+
+      header {
+        padding-top: 28px;
+      }
+    }
   </style>
+
 </head>
+
 <body>
-  <main>
-    <article>
-      <h1>Sift Account and Data Deletion</h1>
-      <p class="date">Effective date: May 9, 2026</p>
+  <div class="page">
+    <div class="card">
+      <header>
+        <div class="brand">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Sift</span>
+        </div>
 
+```
+    <h1>Account and Data Deletion</h1>
+    <p class="subtitle">
+      This page explains how Sift users can request deletion of their account and associated personal data.
+    </p>
+    <p class="meta"><strong>Effective date:</strong> May 9, 2026</p>
+
+    <div class="action">
       <p>
-        This page explains how users of <strong>Sift</strong>, operated by <strong>Happy Dev Sol</strong>,
-        can request deletion of their account and associated personal data.
+        To request deletion of your Sift account and associated personal data, email us using the subject line
+        <strong>Delete my Sift account</strong>.
       </p>
+      <a class="email-button" href="mailto:happy.dev.sol@gmail.com?subject=Delete%20my%20Sift%20account">
+        Email deletion request
+      </a>
+    </div>
+  </header>
 
-      <h2>How to request account deletion</h2>
-      <div class="box">
-        <p>
-          To request deletion of your Sift account and associated personal data, email us at:
-        </p>
-        <p>
-          <a href="mailto:happy.dev.sol@gmail.com?subject=Delete%20my%20Sift%20account">happy.dev.sol@gmail.com</a>
-        </p>
-        <p>
-          Please use the subject line: <strong>Delete my Sift account</strong>.
-        </p>
-      </div>
+  <main>
+    <section>
+      <h2>1. How to Request Account Deletion</h2>
+      <p>
+        Send an email to <a href="mailto:happy.dev.sol@gmail.com">happy.dev.sol@gmail.com</a> with the subject line:
+        <strong>Delete my Sift account</strong>.
+      </p>
+      <p>
+        You can also use any in-app account deletion option available in Sift.
+      </p>
+    </section>
 
-      <h2>What to include in your request</h2>
+    <section>
+      <h2>2. What to Include in Your Request</h2>
       <p>
         To help us process your request, include the email address or account identifier associated with your Sift account.
         We may ask you to verify ownership of the account before deleting data.
       </p>
+    </section>
 
-      <h2>Data deleted</h2>
+    <section>
+      <h2>3. Data Deleted</h2>
       <p>
         When your deletion request is verified, we will delete or anonymize personal data associated with your account,
         which may include:
       </p>
       <ul>
-        <li>Account information, such as email address, display name, and account status</li>
-        <li>Authentication/session data associated with your account</li>
-        <li>Saved stories, saved articles, followed topics, preferences, and personalization data</li>
-        <li>Push notification tokens linked to your account or device</li>
-        <li>Support messages associated with your deletion request, where deletion is legally permitted</li>
+        <li>account information, such as email address, display name, and account status;</li>
+        <li>authentication or session data associated with your account;</li>
+        <li>saved stories, saved articles, followed topics, preferences, and personalization data;</li>
+        <li>push notification tokens linked to your account or device;</li>
+        <li>support messages associated with your deletion request, where deletion is legally permitted.</li>
       </ul>
+    </section>
 
-      <h2>Data that may be retained</h2>
+    <section>
+      <h2>4. Data That May Be Retained</h2>
       <p>
-        We may retain limited information where necessary for legal, security, fraud-prevention, accounting,
-        audit, dispute-resolution, or legitimate business purposes. We may also retain anonymized or aggregated
-        data that can no longer reasonably identify you.
+        We may retain limited information where necessary for legal, security, fraud-prevention, accounting, audit,
+        dispute-resolution, or legitimate business purposes.
       </p>
-
-      <h2>Retention period</h2>
       <p>
-        Verified deletion requests are processed within a reasonable period. Some backup, security, or log data
-        may remain for a limited retention period before being automatically deleted or anonymized.
+        We may also retain anonymized or aggregated data that can no longer reasonably identify you.
       </p>
+    </section>
 
-      <h2>If you do not have a Sift account</h2>
+    <section>
+      <h2>5. Retention Period</h2>
+      <p>
+        Verified deletion requests are processed within a reasonable period. Some backup, security, or log data may remain
+        for a limited retention period before being automatically deleted or anonymized.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. If You Do Not Have a Sift Account</h2>
       <p>
         If you use Sift without creating an account, there may be no account for us to delete. You may still contact us
         to request deletion of personal data that may be associated with your device, support messages, or app usage,
         where applicable and technically possible.
       </p>
+    </section>
 
-      <h2>Contact</h2>
+    <section>
+      <h2>7. Contact</h2>
       <p>
-        For account or data deletion requests, contact:
-        <a href="mailto:happy.dev.sol@gmail.com">happy.dev.sol@gmail.com</a>
+        For account or data deletion requests, contact
+        <a href="mailto:happy.dev.sol@gmail.com">happy.dev.sol@gmail.com</a>.
       </p>
 
-      <footer>
-        Sift &mdash; Happy Dev Sol
-      </footer>
-    </article>
+      <div class="note">
+        <p>
+          Please include enough information for us to identify the account or data request, but do not send passwords
+          or sensitive security credentials by email.
+        </p>
+      </div>
+    </section>
   </main>
+
+  <footer>
+    Sift — Happy Dev Sol
+  </footer>
+</div>
+```
+
+  </div>
 </body>
 </html>
