@@ -6,120 +6,216 @@
 
   <title>Sift Support</title>
 
+  <meta
+    name="description"
+    content="Support and contact information for Sift: News Clarity."
+  >
+
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      max-width: 760px;
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+      line-height: 1.65;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    main {
+      width: min(760px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 40px 20px;
-      line-height: 1.6;
-      color: #222;
-      background: #fff;
+      padding: 56px 0;
     }
 
     h1 {
-      margin-bottom: 8px;
+      margin: 0 0 8px;
+      font-size: 2.25rem;
+      line-height: 1.2;
+      color: #111827;
     }
 
     h2 {
-      margin-top: 32px;
+      margin: 36px 0 12px;
+      font-size: 1.3rem;
+      color: #111827;
     }
 
-    .subtitle {
-      color: #666;
-      margin-bottom: 32px;
+    p {
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin: 12px 0 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin: 6px 0;
     }
 
     a {
-      color: #0066cc;
+      color: #2563eb;
+      text-decoration: none;
     }
 
-    .section {
-      margin-bottom: 28px;
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .subtitle {
+      margin-bottom: 36px;
+      color: #6b7280;
+      font-size: 1.05rem;
+    }
+
+    .contact-box {
+      margin: 20px 0;
+      padding: 20px;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      background: #f9fafb;
+    }
+
+    .contact-box p:last-child {
+      margin-bottom: 0;
     }
 
     footer {
-      margin-top: 48px;
-      padding-top: 20px;
-      border-top: 1px solid #ddd;
-      color: #666;
-      font-size: 14px;
+      margin-top: 52px;
+      padding-top: 24px;
+      border-top: 1px solid #e5e7eb;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        color: #e5e7eb;
+        background: #111827;
+      }
+
+      h1,
+      h2 {
+        color: #f9fafb;
+      }
+
+      .subtitle,
+      footer {
+        color: #9ca3af;
+      }
+
+      .contact-box {
+        border-color: #374151;
+        background: #1f2937;
+      }
+
+      footer {
+        border-color: #374151;
+      }
+
+      a {
+        color: #60a5fa;
+      }
     }
   </style>
 </head>
 
 <body>
+  <main>
+    <h1>Sift Support</h1>
+    <p class="subtitle">
+      Help and support for Sift: News Clarity
+    </p>
 
-  <h1>Sift Support</h1>
-  <p class="subtitle">Help and support for Sift: News Clarity</p>
-
-  <div class="section">
     <h2>Need help?</h2>
 
     <p>
       If you're having trouble with Sift, have a question, or want to report
-      a problem, contact us at:
+      a problem, contact us by email.
     </p>
 
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:happy.dev.sol@gmail.com">happy.dev.sol@gmail.com</a>
-    </p>
-  </div>
+    <div class="contact-box">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:happy.dev.sol@gmail.com">
+          happy.dev.sol@gmail.com
+        </a>
+      </p>
+    </div>
 
-  <div class="section">
     <h2>Common support topics</h2>
 
     <p>We can help with:</p>
 
     <ul>
       <li>Account and sign-in issues</li>
-      <li>Google or Sign in with Apple</li>
-      <li>Notifications</li>
+      <li>Email, Google, or Sign in with Apple</li>
+      <li>Push notifications</li>
       <li>Local news and location settings</li>
       <li>Saved stories and preferences</li>
-      <li>Arabic and Hebrew language support</li>
+      <li>English, Arabic, and Hebrew language support</li>
       <li>Ads and privacy choices</li>
       <li>Bug reports or unexpected behavior</li>
     </ul>
-  </div>
 
-  <div class="section">
     <h2>Account deletion</h2>
 
     <p>
       If you have a Sift account, you can request account deletion directly
-      from the app through your account settings.
+      from within the app through your account settings.
     </p>
 
     <p>
-      If you are unable to access your account, contact us using the support
-      email above.
+      If you are unable to access your account or need help with deletion,
+      contact us at
+      <a href="mailto:happy.dev.sol@gmail.com">
+        happy.dev.sol@gmail.com
+      </a>.
     </p>
-  </div>
 
-  <div class="section">
     <h2>Privacy</h2>
 
     <p>
-      For information about how Sift handles data, see our
+      For information about how Sift handles your data, please read our
       <a href="sift-privacy-policy.html">Privacy Policy</a>.
     </p>
-  </div>
 
-  <div class="section">
     <h2>About Sift</h2>
 
     <p>
-      Sift helps you compare how different news sources report the same story,
-      including differences in wording, framing, claims, sources, timelines,
-      and context.
+      Sift helps you compare how different news sources report the same story.
+      It brings together coverage, wording differences, framing, claims,
+      sources, timelines, and related context so you can get a clearer view
+      of the news.
     </p>
-  </div>
 
-  <footer>
-    © 2026 Sift
-  </footer>
+    <h2>Feedback</h2>
 
+    <p>
+      Suggestions and feedback are welcome. If you have an idea for improving
+      Sift, email us at
+      <a href="mailto:happy.dev.sol@gmail.com">
+        happy.dev.sol@gmail.com
+      </a>.
+    </p>
+
+    <footer>
+      © 2026 Sift. All rights reserved.
+    </footer>
+  </main>
 </body>
 </html>
